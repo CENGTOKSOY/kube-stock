@@ -1,0 +1,53 @@
+# =========================
+# 🍎 İşletim Sistemi Dosyaları (macOS)
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# =========================
+# 💻 IDE ve Editörler (PyCharm / VSCode)
+# =========================
+.idea/
+.vscode/
+*.swp
+*.swo
+*.iml
+
+# =========================
+# 🐍 Python Çöpleri (Order Service için)
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.pytest_cache/
+
+# =========================
+# 🟢 Node.js Çöpleri (Inventory Service için)
+# =========================
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+build/
+
+# =========================
+# 🐹 Go Çöpleri (Notification Service için)
+# =========================
+bin/
+pkg/
+*.exe
+*.test
+*.out
+
+# =========================
+# 🔐 Güvenlik ve Gizli Bilgiler (HAYATİ ÖNEM TAŞIR)
+# =========================
+.env
+.env.*
+*.pem
+*.key
+*.cert
+secrets/
