@@ -39,7 +39,7 @@ The repository is designed to be educational, reproducible, and production-inspi
 
 ---
 ## 📂 Project Structure
-
+``` 
 kube-stock/
 │
 ├── docker-compose.yml
@@ -70,7 +70,7 @@ kube-stock/
         ├── Dockerfile
         ├── main.py
         └── requirements.txt
-
+``` 
 ## 🧠 Architecture Overview
 
 Kube-Stock follows a clean event-driven microservice pattern.
@@ -243,50 +243,6 @@ Run query:
 SELECT * FROM orders;
 ```
 
----
-
-## 📸 Project Screenshots
-
-**Docker Images**
-
-
-**Inventory Service Logs**
-
-
-**Swagger Order API**
-
-
-**Kubernetes Pods**
-
-
-**Docker Containers**
-
-
-**Docker Containers Detailed**
-
-
-**Minikube Container Stats**
-
-
-**PostgreSQL Query Result**
-
-
-**RabbitMQ Queue**
-
-
-
-**RabbitMQ Overview**
-
-
-**RabbitMQ Login**
-
-
-
-**Swagger API Example**
-
-
-
----
 
 ## 🎯 Purpose of the Project
 
