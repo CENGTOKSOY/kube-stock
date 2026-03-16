@@ -248,54 +248,62 @@ SELECT * FROM orders;
 
 ## 📸 Project Screenshots
 
-**Docker Images**
-
-![Docker Images](images/Ekran%20Resmi%202026-03-16%2012.52.27.png)
-
-**Inventory Service Logs**
-
-![Inventory Logs](images/Ekran%20Resmi%202026-03-16%2012.48.10.png)
-
-**Swagger Order API**
-
-![Swagger API](images/Ekran%20Resmi%202026-03-16%2012.50.03.png)
-
 **Kubernetes Pods**
+![Kubernetes Pods](images/Ekran Resmi 2026-03-16 12.06.14.png)
 
-![Kubernetes Pods](images/Ekran%20Resmi%202026-03-16%2012.54.41.png)
-
-**Docker Containers**
-
-![Docker Containers](images/Ekran%20Resmi%202026-03-16%2012.55.12.png)
+**Docker Containers Overview**
+![Docker Containers](images/Ekran Resmi 2026-03-16 12.06.30.png)
 
 **Docker Containers Detailed**
+![Docker Containers Detailed](images/Ekran Resmi 2026-03-16 12.06.41.png)
 
-![Docker Containers](images/Ekran%20Resmi%202026-03-16%2012.56.03.png)
+**PostgreSQL Data**
+![PostgreSQL Data](images/Ekran Resmi 2026-03-16 12.09.16.png)
 
-**Minikube Container Stats**
+**Application Logs**
+![Application Logs](images/Ekran Resmi 2026-03-16 12.10.32.png)
 
-![Minikube Stats](images/Ekran%20Resmi%202026-03-16%2012.57.22.png)
+**Inventory Service Logs**
+![Inventory Service Logs](images/Ekran Resmi 2026-03-16 12.11.16.png)
 
-**PostgreSQL Query Result**
+**PostgreSQL Query**
+![PostgreSQL Query](images/Ekran Resmi 2026-03-16 12.14.55.png)
 
-![Postgres Query](images/Ekran%20Resmi%202026-03-16%2012.58.44.png)
+**PostgreSQL Connection**
+![PostgreSQL Connection](images/Ekran Resmi 2026-03-16 12.15.01.png)
 
-**RabbitMQ Queue**
+**Docker Images**
+![Docker Images](images/Ekran Resmi 2026-03-16 12.15.53.png)
 
-![RabbitMQ Queue](images/Ekran%20Resmi%202026-03-16%2012.59.30.png)
+**Docker Image Details**
+![Docker Image Details](images/Ekran Resmi 2026-03-16 12.16.00.png)
+
+**Docker Containers List**
+![Docker Containers List](images/Ekran Resmi 2026-03-16 12.16.12.png)
+
+**Minikube Status**
+![Minikube Status](images/Ekran Resmi 2026-03-16 12.17.55.png)
+
+**Kubernetes Services**
+![Kubernetes Services](images/Ekran Resmi 2026-03-16 12.42.44.png)
+
+**Kubernetes Deployments**
+![Kubernetes Deployments](images/Ekran Resmi 2026-03-16 12.42.52.png)
+
+**Kubernetes Pods Status**
+![Kubernetes Pods Status](images/Ekran Resmi 2026-03-16 12.52.27.png)
 
 **RabbitMQ Overview**
+![RabbitMQ Overview](images/Ekran Resmi 2026-03-16 12.52.43.png)
 
-![RabbitMQ Overview](images/Ekran%20Resmi%202026-03-16%2013.00.12.png)
+**RabbitMQ Connections**
+![RabbitMQ Connections](images/Ekran Resmi 2026-03-16 12.52.52.png)
 
-**RabbitMQ Login**
+**RabbitMQ Queues**
+![RabbitMQ Queues](images/Ekran Resmi 2026-03-16 13.10.30.png)
 
-![RabbitMQ Login](images/Ekran%20Resmi%202026-03-16%2013.01.05.png)
-
-**Swagger API Example**
-
-![Swagger API](images/Ekran%20Resmi%202026-03-16%2013.02.44.png)
-
+**Swagger API Documentation**
+![Swagger API](images/Ekran Resmi 2026-03-16 13.10.36.png)
 ---
 
 ## 🎯 Purpose of the Project
