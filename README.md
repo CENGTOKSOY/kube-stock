@@ -1,5 +1,4 @@
-
-# ☸️ Kube-Stock
+# Kube-Stock
 
 **Event-Driven Polyglot Microservices on Kubernetes**
 
@@ -250,51 +249,42 @@ SELECT * FROM orders;
 
 **Docker Images**
 
-![Docker Images](images/Ekran%20Resmi%202026-03-16%2012.52.27.png)
 
 **Inventory Service Logs**
 
-![Inventory Logs](images/Ekran%20Resmi%202026-03-16%2012.48.10.png)
 
 **Swagger Order API**
 
-![Swagger API](images/Ekran%20Resmi%202026-03-16%2012.50.03.png)
 
 **Kubernetes Pods**
 
-![Kubernetes Pods](images/Ekran%20Resmi%202026-03-16%2012.54.41.png)
 
 **Docker Containers**
 
-![Docker Containers](images/Ekran%20Resmi%202026-03-16%2012.55.12.png)
 
 **Docker Containers Detailed**
 
-![Docker Containers](images/Ekran%20Resmi%202026-03-16%2012.56.03.png)
 
 **Minikube Container Stats**
 
-![Minikube Stats](images/Ekran%20Resmi%202026-03-16%2012.57.22.png)
 
 **PostgreSQL Query Result**
 
-![Postgres Query](images/Ekran%20Resmi%202026-03-16%2012.58.44.png)
 
 **RabbitMQ Queue**
 
-![RabbitMQ Queue](images/Ekran%20Resmi%202026-03-16%2012.59.30.png)
+
 
 **RabbitMQ Overview**
 
-![RabbitMQ Overview](images/Ekran%20Resmi%202026-03-16%2013.00.12.png)
 
 **RabbitMQ Login**
 
-![RabbitMQ Login](images/Ekran%20Resmi%202026-03-16%2013.01.05.png)
+
 
 **Swagger API Example**
 
-![Swagger API](images/Ekran%20Resmi%202026-03-16%2013.02.44.png)
+
 
 ---
 
