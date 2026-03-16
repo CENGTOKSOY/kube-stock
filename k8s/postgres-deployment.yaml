@@ -1,0 +1,63 @@
+# --- 1. HARDDİSK TALEBİ (Persistent Volume Claim - PVC) ---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce # Aynı anda sadece bir node yazabilir
+  resources:
+    requests:
+      storage: 1Gi # 1 GB'lık kalıcı disk istiyoruz
+
+---
+
+# --- 2. AĞ SERVİSİ (Service) ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+spec:
+  selector:
+    app: postgres
+  ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432
+
+---
+
+# --- 3. DAĞITIM (Deployment) ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:15-alpine
+        env: # Şifreleri tanımlıyoruz
+        - name: POSTGRES_USER
+          value: admin
+        - name: POSTGRES_PASSWORD
+          value: password123
+        - name: POSTGRES_DB
+          value: kubestock
+        ports:
+        - containerPort: 5432
+        volumeMounts: # Konteynerin içindeki klasörü, aşağıdaki sanal diske bağlıyoruz
+        - name: postgres-storage
+          mountPath: /var/lib/postgresql/data
+      volumes: # PVC'den gelen sanal disk
+      - name: postgres-storage
+        persistentVolumeClaim:
+          claimName: postgres-pvc

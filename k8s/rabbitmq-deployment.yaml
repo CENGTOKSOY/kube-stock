@@ -1,0 +1,43 @@
+# --- 1. AĞ SERVİSİ (SERVICE) ---
+# Diğer podların RabbitMQ'yu "rabbitmq" ismiyle bulmasını sağlar
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq
+spec:
+  selector:
+    app: rabbitmq
+  ports:
+    - name: amqp
+      protocol: TCP
+      port: 5672
+      targetPort: 5672
+    - name: management
+      protocol: TCP
+      port: 15672
+      targetPort: 15672
+
+---
+
+# --- 2. DAĞITIM (DEPLOYMENT) ---
+# RabbitMQ'nun kendisini çalıştıran kurallar bütünü
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbitmq-deployment
+spec:
+  replicas: 1 # Kaç kopya çalışacak?
+  selector:
+    matchLabels:
+      app: rabbitmq
+  template:
+    metadata:
+      labels:
+        app: rabbitmq # Service buradaki etiketi (label) arayıp bulur
+    spec:
+      containers:
+      - name: rabbitmq
+        image: rabbitmq:3-management-alpine
+        ports:
+        - containerPort: 5672
+        - containerPort: 15672

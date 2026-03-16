@@ -1,0 +1,80 @@
+version: '3.8'
+
+services:
+  # -------------------------------------
+  # 1. ALTYAPI: MESAJ KUYRUĞU (RabbitMQ)
+  # -------------------------------------
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: kube-rabbitmq
+    ports:
+      - "5672:5672"   # Servislerin mesajlaşma portu
+      - "15672:15672" # Tarayıcıdan izleme (UI) portu
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 5s
+      timeout: 5s
+      retries: 3
+
+  # -------------------------------------
+  # 2. ALTYAPI: VERİTABANI (PostgreSQL)
+  # -------------------------------------
+  postgres:
+    image: postgres:15-alpine
+    container_name: kube-postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: kubestock
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin"]
+      interval: 5s
+      timeout: 5s
+      retries: 3
+
+  # -------------------------------------
+  # 3. MİKROSERVİS: ORDER SERVICE (Python)
+  # -------------------------------------
+  order-service:
+    build: ./services/order-service
+    container_name: kube-order-service
+    ports:
+      - "8000:8000"
+    environment:
+      - RABBITMQ_URL=amqp://rabbitmq:5672
+      - DB_URL=postgresql://admin:password123@postgres:5432/kubestock
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+
+  # -------------------------------------
+  # 4. MİKROSERVİS: INVENTORY SERVICE (Node.js)
+  # -------------------------------------
+  inventory-service:
+    build: ./services/inventory-service
+    container_name: kube-inventory-service
+    ports:
+      - "3000:3000"
+    environment:
+      - RABBITMQ_URL=amqp://rabbitmq:5672
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  # -------------------------------------
+  # 5. MİKROSERVİS: NOTIFICATION SERVICE (Go)
+  # -------------------------------------
+  notification-service:
+    build: ./services/notification-service
+    container_name: kube-notification-service
+    ports:
+      - "8080:8080"
+    environment:
+      - RABBITMQ_URL=amqp://rabbitmq:5672
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
