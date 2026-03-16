@@ -365,7 +365,6 @@ MIT License
 ## 👤 Author
 
 **Ali Toksoy**
-
 GitHub: [https://github.com/CENGTOKSOY](https://github.com/CENGTOKSOY)
 
 ---
